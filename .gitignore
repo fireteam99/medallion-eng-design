@@ -33,3 +33,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# local database volume
+pg_data
