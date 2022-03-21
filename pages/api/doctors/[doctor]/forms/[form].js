@@ -2,8 +2,7 @@ import validator from "validator";
 
 import Doctor from "importableModels/Doctor";
 import Form from "importableModels/Form";
-import fillNY from "utils/fillNY";
-import fillCA from "utils/fillCA";
+import { fillNY, fillCA } from "utils/forms";
 
 export default async function handler(req, res) {
   const { doctor: doctorId, form: formId } = req.query;
