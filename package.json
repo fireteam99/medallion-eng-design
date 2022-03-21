@@ -17,8 +17,13 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
+    "framer-motion": "^6.2.8",
     "luxon": "^2.3.1",
     "next": "12.1.0",
     "pdf-lib": "^1.17.1",
@@ -28,6 +33,7 @@
     "react-dom": "17.0.2",
     "sequelize": "^6.17.0",
     "sequelize-cli": "^6.4.1",
+    "swr": "^1.2.2",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
   },
