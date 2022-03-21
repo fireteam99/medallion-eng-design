@@ -49,34 +49,34 @@ To avoid having to write a different "fill script" for every specific form, we c
 ```
 
 #### Check Box Group
-
+```
 {
-type: "CHECKBOX_GROUP"
-checkboxes: [
-{
-type: "CHECKBOX",
-value: "male",
-sourceValue: "gender"
-formId: "form-asdf"
-},
-{
-type: "CHECKBOX",
-value: "female",
-sourceValue: "gender"
-formId: "form-zxcv"
+  type: "CHECKBOX_GROUP"
+  checkboxes: [
+    {
+      type: "CHECKBOX",
+      value: "male",
+      sourceValue: "gender"
+      formId: "form-asdf"
+    },
+    {
+      type: "CHECKBOX",
+      value: "female",
+      sourceValue: "gender"
+      formId: "form-zxcv"
+    }
+  ]
 }
-]
-}
-
+```
 #### Date
-
+```
 {
-type: "DATE",
-formId: "form-qwertyasdfzxcv",
-format: "yyyy-mm-dd"
-sourceValue: "birthday"
+  type: "DATE",
+  formId: "form-qwertyasdfzxcv",
+  format: "yyyy-mm-dd"
+  sourceValue: "birthday"
 }
-
+```
 ### Typescript
 
 It would be helpful to take advantage of Typescript as the project grows in size.
