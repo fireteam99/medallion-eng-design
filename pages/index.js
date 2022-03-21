@@ -33,7 +33,7 @@ export default function Home() {
               {data.doctors.map((doctor) => (
                 <Link href={`/doctors/${doctor.id}`} key={doctor.id} passHref>
                   <HStack
-                    bg="cyan.100"
+                    bg="gray.100"
                     p=".8em"
                     borderRadius="md"
                     shadow="md"

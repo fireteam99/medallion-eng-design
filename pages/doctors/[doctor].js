@@ -65,7 +65,7 @@ export default function Doctor() {
                 borderRadius="md"
                 shadow="md"
                 p="1em"
-                bg="cyan.100"
+                bg="gray.100"
               >
                 <Link href={form.url} target="_blank" rel="noreferrer">
                   {form.name}
