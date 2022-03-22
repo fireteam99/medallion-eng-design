@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 8080",
-    "build": "next build && npm run db-migrate && npm run db-seed",
+    "build": "next build",
+    "build:vercel": "next build && npm run db-migrate && npm run db-seed",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
@@ -43,6 +44,7 @@
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
-    "prettier": "2.6.0"
+    "prettier": "2.6.0",
+    "webpack-node-externals": "^3.0.0"
   }
 }
