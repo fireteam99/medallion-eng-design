@@ -33,7 +33,7 @@ Exposes a simple REST api using Next.js API routes. Uses Sequelize to connect an
 A Postgres database with Doctors and Forms tables. The unfilled PDFs are stored in a bucket using Supabase.
 
 ### Deployment
-This project is deployed using Heroku for the app and Supabase for the database. I used Heroku over Vercel due to issues with getting Sequelize to play nice with serverless functions (more on that later).
+This project is deployed using Heroku for the app and Supabase for the database. I used Heroku over Vercel due to issues with getting Sequelize to play nice with serverless functions (more on that later). Alternatively, we could also build and publish our project as a Docker image and use GCP's Compute Engine or AWS ECS to deploy.
 
 ## Further Considerations
 This project was quickly hacked together within a couple hours. If I had additional time and/if this were to be a long term project, there are a few things I would change.
@@ -125,13 +125,14 @@ While this approach has the advantage of avoiding the need to write a "fill func
 
 ### Typescript
 
-It would be helpful to take advantage of Typescript as the project grows in size.
+It would be helpful to take advantage of Typescript as the project grows in size. I went with Javascript for this demo to save time and to avoid any transpilation related issues.
 
-### TypeORM
-TBD
+### Sequelize vs TypeORM
+Sequelize required several work arounds to play well with Next.js's API routes. It also seems to have poor support for Typescript. I originally chose to use Sequelize because I had some prior experience using it - but in hind sight it probably would have been better to go with Typescript and TypeORM.
 
 ### noSQL vs SQL
-TBD
-### Dedicated Backend
+Due to the non relational nature of the data we are handling for this demo, using a noSQL database would have also worked well. In fact, it might have been a better choice if we were to modularize the form fields as each form field element is represented as a deeply nested JSON object.
 
-Our app doesn't really make use of Next.js's main advantages. In particular, working with a Next.js backend has a couple drawbacks regarding issues with serverless functions.
+### Next.js vs CRA + Dedicated Backend
+
+I originally wanted to use Next.js as it effeciently bundles our FE and BE into a single framework. Unfortunately, I encountered several issues Next.js's API routes running on Vercel's serverless functions. Some dependencies such as `Sequelize`, `pg`, and `pg-hstore` seem to run into [module resolution issues](https://github.com/sequelize/sequelize/issues/7509#issuecomment-361032176) when running in a serverless environment. Another drawback is the lack of access to certain `fs` modules ([like no access to files](https://github.com/redwoodjs/redwood/issues/1664)) that would be availible in a traditional server environment. Server side rendering is a nother major feature of Next.js but isn't a huge neccessity for our use case. There also isn't a central entry point i.e. `server.js` which makes certain things more difficult. While there are certainly advantages with Next.js, I would probably go with a dedicated backend using Express of Fastify in retrospect. 
