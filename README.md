@@ -119,8 +119,10 @@ if (formObj.type === 'DATE') {
 }
 ```
 
-
 While this approach has the advantage of avoiding the need to write a "fill function" for each specific application, its feasibilty is directly correlated with the complexity of the forms being handled. For complicated forms wither interdependent form fields, writing a "fill function" might be more legible and easier to implement.
+
+### Auth
+In real life we would need to make sure the data in our application is secured - especially when it comes to PII. We can make use of Supabase's built in Authentication integrations to sign users in and PostgreSQL's Row Level Security to control who has access to the data.
 
 ### Typescript
 
