@@ -136,7 +136,7 @@ Due to the non-relational nature of the data we are handling for this demo, a no
 
 ### Next.js vs CRA + Dedicated Backend
 
-I originally wanted to use Next.js as it effeciently bundles our forntend and backend into a single framework. Unfortunately, I encountered several issues with Next.js's API routes running on Vercel's serverless functions. Some dependencies such as `Sequelize`, `pg`, and `pg-hstore` seem to run into [module resolution issues](https://github.com/sequelize/sequelize/issues/7509#issuecomment-361032176) when running in a serverless environment. 
+I originally wanted to use Next.js as it efficiently bundles our frontend and backend into a single framework. Unfortunately, I encountered several issues with Next.js's API routes running on Vercel's serverless functions. Some dependencies such as `Sequelize`, `pg`, and `pg-hstore` seem to run into [module resolution issues](https://github.com/sequelize/sequelize/issues/7509#issuecomment-361032176) when running in a serverless environment. 
 
 Another drawback is the lack of access to certain `fs` modules ([like no access to files](https://github.com/redwoodjs/redwood/issues/1664)) that would be availible in a traditional server environment. Server side rendering is a major advantage of Next.js but it doesn't really apply to our use case. 
 
