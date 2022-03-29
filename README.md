@@ -129,10 +129,10 @@ In real life we would need to make sure the data in our application is secured -
 It would be helpful to take advantage of Typescript as the project grows in size. I went with Javascript for this demo to save time and to avoid any transpilation related issues.
 
 ### Sequelize vs TypeORM
-Sequelize required several work arounds to play well with Next.js's API routes. It also seems to have poor support for Typescript. I originally chose to use Sequelize because I had prior experience - but in hind sight it probably would have been better to go with Typescript and TypeORM.
+Sequelize required several work arounds to play well with Next.js's API routes. It also seems to have poor support for Typescript. I originally chose to use Sequelize because I had prior experience - but in hindsight it probably would have been better to go with Typescript and TypeORM.
 
 ### noSQL vs SQL
-Due to the non relational nature of the data we are handling for this demo, a noSQL database would have worked just as well as a SQL database. In fact, it might have been a better choice if we were to modularize the form fields - since each form field element is represented as a deeply nested JSON object.
+Due to the non-relational nature of the data we are handling for this demo, a noSQL database would have worked just as well as a SQL database. In fact, it might have been a better choice if we were to modularize the form fields - since each form field element is represented as a deeply nested JSON object.
 
 ### Next.js vs CRA + Dedicated Backend
 
