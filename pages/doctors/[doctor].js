@@ -23,7 +23,6 @@ export default function Doctor() {
     "/api/doctors",
     fetcher
   );
-  console.log(doctorsError);
   const doctorsIsLoading = !doctorsError && !doctorsData;
 
   const doctor = doctorsData?.doctors?.find((doctor) => doctor.id === doctorId);
