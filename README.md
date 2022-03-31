@@ -129,14 +129,14 @@ In real life we would need to make sure the data in our application is secured -
 It would be helpful to take advantage of Typescript as the project grows in size. I went with Javascript for this demo to save time and to avoid any transpilation related issues.
 
 ### Sequelize vs TypeORM
-Sequelize required several work arounds to play well with Next.js's API routes. It also seems to have poor support for Typescript. I originally chose to use Sequelize because I had prior experience - but in hind sight it probably would have been better to go with Typescript and TypeORM.
+Sequelize required several work arounds to play well with Next.js's API routes. It also seems to have poor support for Typescript. I originally chose to use Sequelize because I had prior experience - but in hindsight it probably would have been better to go with Typescript and TypeORM.
 
 ### noSQL vs SQL
-Due to the non relational nature of the data we are handling for this demo, a noSQL database would have worked just as well as a SQL database. In fact, it might have been a better choice if we were to modularize the form fields - since each form field element is represented as a deeply nested JSON object.
+Due to the non-relational nature of the data we are handling for this demo, a noSQL database would have worked just as well as a SQL database. In fact, it might have been a better choice if we were to modularize the form fields - since each form field element is represented as a deeply nested JSON object.
 
 ### Next.js vs CRA + Dedicated Backend
 
-I originally wanted to use Next.js as it effeciently bundles our forntend and backend into a single framework. Unfortunately, I encountered several issues with Next.js's API routes running on Vercel's serverless functions. Some dependencies such as `Sequelize`, `pg`, and `pg-hstore` seem to run into [module resolution issues](https://github.com/sequelize/sequelize/issues/7509#issuecomment-361032176) when running in a serverless environment. 
+I originally wanted to use Next.js as it efficiently bundles our frontend and backend into a single framework. Unfortunately, I encountered several issues with Next.js's API routes running on Vercel's serverless functions. Some dependencies such as `Sequelize`, `pg`, and `pg-hstore` seem to run into [module resolution issues](https://github.com/sequelize/sequelize/issues/7509#issuecomment-361032176) when running in a serverless environment. 
 
 Another drawback is the lack of access to certain `fs` modules ([like no access to files](https://github.com/redwoodjs/redwood/issues/1664)) that would be availible in a traditional server environment. Server side rendering is a major advantage of Next.js but it doesn't really apply to our use case. 
 
